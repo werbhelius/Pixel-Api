@@ -16,9 +16,8 @@ router.post("/", (req, res) => {
         '/oauth2/access_token',
         'POST',
         data,
-        (res_data) => {
-            console.log(JSON.stringify(res_data))
-            res.status(200).send(res_data)
+        (response, code) => {
+            res.status(code).send(response)
         },
         (err) => {
             console.log(err);

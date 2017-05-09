@@ -1,4 +1,4 @@
-const http = require('https')
+const https = require('https')
 const qs = require("querystring");
 
 function ApiRequest(host, path, method, data, okCallback, errorCallback) {
@@ -11,7 +11,7 @@ function ApiRequest(host, path, method, data, okCallback, errorCallback) {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
     }
-    const client = http.request(option, (res) => {
+    const client = https.request(option, (res) => {
         res.on('error', (err) => {
             errorCallback(err)
         })
@@ -22,19 +22,11 @@ function ApiRequest(host, path, method, data, okCallback, errorCallback) {
         })
 
         res.on("end", function () {
-            var body = Buffer.concat(chunks);
-            console.log(body.toString());
-            if (res.statusCode != 200) {
-                errorCallback(body.toString)
-                return
-            } else {
-                if (res_data == '') {
-                    ApiRequest(host, path, method, data, okCallback, errorCallback);
-                    return
-                } else {
-                    okCallback(res_data)
-                }
-            }
+            let body = Buffer.concat(chunks)
+            let response = body.toString()
+            console.log(response)
+            res.setEncoding('utf8')
+            okCallback(response, res.statusCode)
         });
 
 
