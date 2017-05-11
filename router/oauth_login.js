@@ -20,8 +20,7 @@ router.post("/", (req, res) => {
             res.status(code).send(response)
         },
         (err) => {
-            console.log(err);
-            res.status(502).send(JSON.stringify(err))
+            res.status(500).send(err)
         }
     )
 

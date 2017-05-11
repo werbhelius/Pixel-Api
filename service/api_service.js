@@ -13,6 +13,7 @@ function ApiRequest(host, path, method, data, okCallback, errorCallback) {
     }
     const client = https.request(option, (res) => {
         res.on('error', (err) => {
+            console.log('err =>' + err);
             errorCallback(err)
         })
 
@@ -24,7 +25,7 @@ function ApiRequest(host, path, method, data, okCallback, errorCallback) {
         res.on("end", function () {
             let body = Buffer.concat(chunks)
             let response = body.toString()
-            console.log(response)
+            console.log('end =>' + response)
             res.setEncoding('utf8')
             okCallback(response, res.statusCode)
         });
