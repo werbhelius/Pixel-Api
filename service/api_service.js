@@ -2,6 +2,10 @@ const https = require('https')
 const qs = require("querystring");
 
 function ApiRequest(host, path, method, data, okCallback, errorCallback) {
+
+    console.log('reslove request => ' + method + path);
+    console.log('request data => ' + JSON.stringify(data));
+
     let option = {
         hostname: host,
         method: method,
@@ -11,6 +15,7 @@ function ApiRequest(host, path, method, data, okCallback, errorCallback) {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
     }
+
     const client = https.request(option, (res) => {
         res.on('error', (err) => {
             console.log('err =>' + err);
@@ -25,7 +30,7 @@ function ApiRequest(host, path, method, data, okCallback, errorCallback) {
         res.on("end", function () {
             let body = Buffer.concat(chunks)
             let response = body.toString()
-            console.log('end =>' + response)
+            console.log('response end data =>' + response)
             res.setEncoding('utf8')
             okCallback(response, res.statusCode)
         });

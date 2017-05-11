@@ -10,7 +10,6 @@ router.post("/", (req, res) => {
         code: req.body.code,
         redirect_uri: req.body.redirect_uri,
     }
-    console.log(data);
     ApiRequest(
         'api.weibo.com',
         '/oauth2/access_token',
