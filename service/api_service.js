@@ -4,7 +4,10 @@ const qs = require("querystring");
 function ApiRequest(host, path, method, data, okCallback, errorCallback) {
 
     console.log('reslove request => ' + method + path);
-    console.log('request data => ' + JSON.stringify(data));
+
+    if (!data) {
+        console.log('request data => ' + JSON.stringify(data));
+    }
 
     let option = {
         hostname: host,
@@ -37,7 +40,9 @@ function ApiRequest(host, path, method, data, okCallback, errorCallback) {
 
 
     })
-    client.write(qs.stringify(data))
+    if (!data) {
+        client.write(qs.stringify(data))
+    }
     client.end();
 }
 

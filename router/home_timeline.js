@@ -3,19 +3,22 @@ const router = express();
 const ApiRequest = require('../service/api_service')
 const ApiConfig = require('../api/api_config')
 
-router.post("/", (req, res) => {
-    const data = {
-        client_id: req.body.client_id,
-        client_secret: req.body.client_secret,
-        grant_type: req.body.grant_type,
-        code: req.body.code,
-        redirect_uri: req.body.redirect_uri,
-    }
+router.get("/", (req, res) => {
+
+    let access_token = req.query.access_token
+    let count = req.query.count
+    let page = req.query.page
+
+    const path = ApiConfig.API_ROUTER_CONFIG.home_timeline +
+        '?access_token=' + access_token +
+        '&count=' + count +
+        '&page=' + page
+
     ApiRequest(
         ApiConfig.HOST_CONCIG.host,
-        ApiConfig.API_ROUTER_CONFIG.oauth_post,
-        'POST',
-        data,
+        path,
+        'get',
+        null,
         (response, code) => {
             res.status(code).send(response)
         },

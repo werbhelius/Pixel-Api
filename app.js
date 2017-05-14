@@ -18,6 +18,8 @@ app.all('*', function (req, res, next) {
 
 app.use('/oauth2/access_token', require('./router/oauth_login'))
 
+app.use('/statuses/home_timeline.json', require('./router/home_timeline'))
+
 const port = process.env.PORT || 3000
 app.listen(port, () => {
     console.log(`server running @${port}`);
