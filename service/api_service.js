@@ -4,8 +4,7 @@ const qs = require("querystring");
 function ApiRequest(host, path, method, data, okCallback, errorCallback) {
 
     console.log('reslove request => ' + method + path);
-
-    if (!data) {
+    if (data != null) {
         console.log('request data => ' + JSON.stringify(data));
     }
 
@@ -40,7 +39,7 @@ function ApiRequest(host, path, method, data, okCallback, errorCallback) {
 
 
     })
-    if (!data) {
+    if (data != null) {
         client.write(qs.stringify(data))
     }
     client.end();
