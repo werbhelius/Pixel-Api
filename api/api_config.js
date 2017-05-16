@@ -5,7 +5,8 @@ const host_config = {
 
 const api_router_config = {
     oauth_post: '/oauth2/access_token',
-    home_timeline: '/2/statuses/home_timeline.json'
+    home_timeline: '/2/statuses/home_timeline.json',
+    userInfo: '/2/users/show.json',
 }
 
 const ApiConfig = {
