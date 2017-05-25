@@ -20,7 +20,11 @@ app.use('/oauth2/access_token', require('./router/oauth_login'))
 
 app.use('/statuses/home_timeline.json', require('./router/home_timeline'))
 
+app.use('/statuses/public_timeline.json', require('./router/public_timeline'))
+
 app.use('/users/show.json', require('./router/userInfo'))
+
+app.use('/statuses/user_timeline.json', require('./router/my_content'))
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
