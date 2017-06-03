@@ -28,6 +28,8 @@ app.use('/statuses/user_timeline.json', require('./router/my_content'))
 
 app.use('/comments/show.json', require('./router/content_comments'))
 
+app.use('/statuses/update.json', require('./router/send_text'))
+
 const port = process.env.PORT || 3000
 app.listen(port, () => {
     console.log(`server running @${port}`);
