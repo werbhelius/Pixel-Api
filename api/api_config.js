@@ -8,7 +8,8 @@ const api_router_config = {
     home_timeline: '/2/statuses/home_timeline.json',
     public_timeline: '/2/statuses/public_timeline.json',
     userInfo: '/2/users/show.json',
-    myContent: '/2/statuses/user_timeline.json'
+    myContent: '/2/statuses/user_timeline.json',
+    content_comments: '/2/comments/show.json'
 }
 
 const ApiConfig = {
