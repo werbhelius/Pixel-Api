@@ -10,7 +10,8 @@ const api_router_config = {
     userInfo: '/2/users/show.json',
     myContent: '/2/statuses/user_timeline.json',
     content_comments: '/2/comments/show.json',
-    send_text: '/2/statuses/update.json'
+    send_text: '/2/statuses/update.json',
+    send_image: '/2/statuses/upload.json'
 }
 
 const ApiConfig = {

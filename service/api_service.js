@@ -4,8 +4,13 @@ const qs = require("querystring");
 function ApiRequest(host, path, method, data, okCallback, errorCallback) {
 
     console.log('reslove request => ' + method + path);
+
+    var ContentType = 'application/x-www-form-urlencoded'
     if (data != null) {
-        console.log('request data => ' + JSON.stringify(data));
+        console.log('request data => ' + JSON.stringify(data))
+        if (data.pic != null) {
+            ContentType = 'multipart/form-data'
+        }
     }
 
     let option = {
@@ -14,7 +19,7 @@ function ApiRequest(host, path, method, data, okCallback, errorCallback) {
         path: path,
         port: null,
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': ContentType,
         }
     }
 

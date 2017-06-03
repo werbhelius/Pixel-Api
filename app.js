@@ -2,8 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // 跨域设置
 app.all('*', function (req, res, next) {
@@ -29,6 +29,8 @@ app.use('/statuses/user_timeline.json', require('./router/my_content'))
 app.use('/comments/show.json', require('./router/content_comments'))
 
 app.use('/statuses/update.json', require('./router/send_text'))
+
+app.use('/statuses/upload.json', require('./router/send_image'))
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
