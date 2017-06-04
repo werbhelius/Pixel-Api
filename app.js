@@ -32,6 +32,14 @@ app.use('/statuses/update.json', require('./router/send_text'))
 
 app.use('/statuses/upload.json', require('./router/send_image'))
 
+app.use('/statuses/mentions.json', require('./router/at_me_statuses'))
+
+app.use('/comments/mentions.json', require('./router/at_me_comments'))
+
+app.use('/comments/to_me.json', require('./router/receive_comment'))
+
+app.use('/comments/by_me.json', require('./router/send_comment'))
+
 const port = process.env.PORT || 3000
 app.listen(port, () => {
     console.log(`server running @${port}`);
