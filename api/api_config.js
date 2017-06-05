@@ -15,7 +15,9 @@ const api_router_config = {
     at_me_status: '/2/statuses/mentions.json',
     at_me_comments: '/2/comments/mentions.json',
     receive_comment: '/2/comments/to_me.json',
-    send_comment: '/2/comments/by_me.json'
+    send_comment: '/2/comments/by_me.json',
+    my_follower: '/2/friendships/followers.json',
+    my_friend: '/2/friendships/friends.json'
 }
 
 const ApiConfig = {

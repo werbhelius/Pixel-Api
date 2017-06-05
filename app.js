@@ -40,6 +40,10 @@ app.use('/comments/to_me.json', require('./router/receive_comment'))
 
 app.use('/comments/by_me.json', require('./router/send_comment'))
 
+app.use('/friendships/followers.json', require('./router/my_follower'))
+
+app.use('/friendships/friends.json', require('./router/my_friend'))
+
 const port = process.env.PORT || 3000
 app.listen(port, () => {
     console.log(`server running @${port}`);
