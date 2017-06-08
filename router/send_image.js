@@ -11,7 +11,7 @@ router.post("/", upload.single('pic'), (req, res) => {
     const data = {
         access_token: req.body.access_token,
         status: req.body.status,
-        // pic: req.body.pic
+        pic: req.body.pic
     }
 
     ApiRequest(
