@@ -15,28 +15,28 @@
 
 ## Api
 
-#### access_token
+### access_token
 [POST /oauth2/access_token](./router/oauth_login.js)  获取 Oauth2 token
 
-#### weibos
+### weibos
 [GET /statuses/home_timeline.json](./router/home_timeline.js)  获取当前登录用户及其所关注用户的最新微博
 
 [GET /statuses/public_timeline.json](./router/public_timeline.js)  获取最新的公共微博
 
 [GET /statuses/user_timeline.json](./router/my_content.js)  获取用户发布的微博
 
-#### users
+### users
 [GET /users/show.json](./router/userInfo.js)  获取用户信息
 
-#### comments
+### comments
 [GET /comments/show.json](./router/content_comments.js)  获取某条微博的评论列表
 
-#### send weibo
+### send weibo
 [POST /statuses/update.json](./router/send_text.js)  发布一条微博信息
 
 [POST /statuses/upload.json](./router/send_image.js)  上传图片并发布一条微博
 
-#### notify
+### notify
 [GET /statuses/mentions.json](./router/at_me_statuses.js)  获取@当前用户的最新微博
 
 [GET /comments/mentions.json](./router/at_me_comments.js)  获取@到我的评论
@@ -45,7 +45,7 @@
 
 [GET /comments/by_me.json](./router/send_comment.js)  我发出的评论列表
 
-#### friendships
+### friendships
 [GET /friendships/followers.json](./router/my_follower.js)  获取用户粉丝列表
 
 [GET /friendships/friends.json](./router/my_friend.js)  获取用户的关注列表
