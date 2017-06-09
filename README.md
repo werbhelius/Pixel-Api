@@ -10,6 +10,8 @@
 * 后续接口我会继续开发，同时欢迎 Pull Request！
 
 ## Run
+
+`npm install`
 `node app.js`
 
 
@@ -58,5 +60,3 @@
 ## LICENSE
 [Apache License](./LICENSE)
 
-## Coffee
-[请我喝一杯咖啡](https://github.com/Werb/Pixel-Web/blob/master/COFFEE.md)
